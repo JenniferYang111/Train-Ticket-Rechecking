@@ -15,19 +15,19 @@
       <p id="stage-number" class="eyebrow"></p>
       <h2 id="stage-title"></h2><p id="stage-description"></p>
       <div id="ticket" class="ticket" hidden>
-        <p class="eyebrow">YOUR TRAIN TICKET</p><h3>Seat reservation</h3>
-        <p id="ticket-route"></p>
-        <div class="ticket-details"><div>Carriage<strong id="ticket-carriage"></strong></div><div>Seat<strong id="ticket-seat"></strong></div></div>
-        <dl class="travel-details">
-          <dt>Train</dt><dd id="ticket-train"></dd>
-          <dt>Departure time</dt><dd id="ticket-time"></dd>
-          <dt>Boarding location</dt><dd id="ticket-location"></dd>
-          <dt>Ticket gate</dt><dd id="ticket-gate"></dd>
-          <dt>Refund</dt><dd id="ticket-refund"></dd>
-          <dt>Rescheduling</dt><dd id="ticket-rescheduling"></dd>
-        </dl>
-        <p>Sample ticket. Refund and rescheduling terms are fictional for this simulation.</p>
-        <p>Match these details with the carriage and seat labels.</p>
+        <div class="ticket-heading"><span>TRAIN TICKET</span><span id="ticket-train"></span></div>
+        <div class="ticket-main">
+          <div class="ticket-place"><span class="ticket-label">Route</span><p id="ticket-route"></p><span class="ticket-label">Boarding station</span><p id="ticket-location"></p></div>
+          <div class="ticket-departure"><span class="ticket-label">Departure</span><p id="ticket-time"></p></div>
+        </div>
+        <div class="ticket-details">
+          <span>Carriage <span id="ticket-carriage"></span></span>
+          <span>Seat <span id="ticket-seat"></span></span>
+          <span>Gate <span id="ticket-gate"></span></span>
+          <span>Platform <span id="ticket-platform"></span></span>
+        </div>
+        <div class="ticket-policies"><p>Refund: <span id="ticket-refund"></span></p><p>Rescheduling: <span id="ticket-rescheduling"></span></p></div>
+        <p class="ticket-note">Sample ticket · Fictional refund and rescheduling terms.</p>
       </div>
       <p id="status" role="status" aria-live="polite"></p>
       <div class="actions"><button id="check" type="button">Check ticket</button><button id="continue" type="button">Continue</button></div>

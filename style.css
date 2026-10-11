@@ -11,14 +11,17 @@ p, li { line-height: 1.6; }
 #journey li[aria-current="step"] { background: #183b43; color: white; font-weight: 700; }
 #journey li.completed { border-left: 4px solid #358568; }
 .panel { background: white; padding: 26px; border: 1px solid #d7e2de; border-radius: 16px; margin-bottom: 20px; }
-.ticket { padding: 22px; background: #fff7df; border: 2px dashed #bb984d; border-radius: 12px; margin: 22px 0; }
-.ticket h3 { margin: 4px 0 18px; }
-.ticket-details { display: flex; gap: 60px; }
-.ticket-details strong { display: block; font-size: 2rem; }
-.travel-details { display: grid; grid-template-columns: minmax(100px, 1fr) 2fr; gap: 10px 16px; }
-.travel-details dt { font-weight: 600; }
-.travel-details dd { margin: 0; overflow-wrap: anywhere; }
-.ticket p:last-child { font-size: .85rem; }
+.ticket { max-width: 620px; padding: 16px 20px; background: #fff7df; border: 1px solid #bb984d; border-radius: 10px; margin: 20px 0; }
+.ticket-heading { display: flex; justify-content: space-between; font-size: .7rem; letter-spacing: .1em; }
+.ticket-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; margin: 12px 0; }
+.ticket-label { display: block; font-size: .65rem; color: #526e70; }
+.ticket-place p { font-size: 1.1rem; line-height: 1.3; margin: 2px 0 8px; }
+.ticket-departure { text-align: right; }
+.ticket-departure p { font-size: 1.65rem; font-weight: 400; margin: 2px 0; }
+.ticket-details { display: flex; flex-wrap: wrap; gap: 8px 24px; border-top: 1px dashed #bb984d; border-bottom: 1px dashed #bb984d; padding: 9px 0; font-size: .8rem; font-weight: 400; }
+.ticket-policies { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: .65rem; }
+.ticket-policies p { margin: 9px 0 0; line-height: 1.4; }
+.ticket .ticket-note { font-size: .6rem; line-height: 1.3; margin: 8px 0 0; color: #526e70; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 button { border: 0; background: #183b43; color: white; padding: 13px 20px; border-radius: 8px; cursor: pointer; font: inherit; font-weight: 600; }
 button:hover { background: #285963; }

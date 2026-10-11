@@ -26,6 +26,10 @@ let ticketIndex = Math.floor(Math.random() * tickets.length);
 function render() {
   const ticket = tickets[ticketIndex];
   Object.entries(ticket).forEach(([field, value]) => { element(`ticket-${field}`).textContent = value; });
+  // Keep the platform separate so it can use the smaller ticket-detail type.
+  const [station, platform] = ticket.location.split(' · Platform ');
+  element('ticket-location').textContent = station;
+  element('ticket-platform').textContent = platform;
   element('journey').replaceChildren(...stages.map(([name], index) => {
     const item = document.createElement('li');
     item.textContent = name;
