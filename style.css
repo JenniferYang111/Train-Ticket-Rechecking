@@ -16,6 +16,7 @@ p, li { line-height: 1.6; }
 .ticket-main { display: grid; grid-template-columns: minmax(0, 1fr) 64px; gap: 16px; align-items: center; margin: 12px 0; }
 .ticket-label { display: block; font-size: .65rem; color: #526e70; }
 .ticket-place p { font-size: 1.1rem; line-height: 1.3; margin: 2px 0 8px; }
+#ticket-route { white-space: nowrap; }
 .ticket-departure { text-align: right; }
 .ticket-departure p { font-size: 1.65rem; font-weight: 400; margin: 2px 0; }
 .ticket-details { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 12px; border-top: 1px dashed #bb984d; border-bottom: 1px dashed #bb984d; padding: 9px 0; font-size: .8rem; font-weight: 400; }
