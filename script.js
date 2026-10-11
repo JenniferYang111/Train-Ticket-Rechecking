@@ -21,7 +21,8 @@ const tickets = [
   { route: 'Forest City → Valley Town', carriage: '09', seat: '16F', train: 'T318', time: '17:20', location: 'Forest City North · Platform 2', gate: 'C1', refund: 'Non-refundable sample fare.', rescheduling: 'Two free changes before departure.' },
   { route: 'Harbor Town → Meadow City', carriage: '02', seat: '05D', train: 'T406', time: '20:10', location: 'Harbor Town Station · Platform 7', gate: 'D3', refund: '50% refund before departure.', rescheduling: 'Changes before departure with a sample $10 fee.' }
 ];
-let ticketIndex = Math.floor(Math.random() * tickets.length);
+// Match the reference ticket on first load; restarts still select a different ticket.
+let ticketIndex = 3;
 
 function render() {
   const ticket = tickets[ticketIndex];
