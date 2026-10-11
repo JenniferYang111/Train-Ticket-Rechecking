@@ -20,6 +20,8 @@ The files are separate and stored directly at the repository root.
 
 Read the initial ticket, then select Continue. The ticket automatically hides. At subsequent stages, choose Check ticket or Continue. Close the ticket to check again within the same stage. At the seated stage, choose Finish journey to see the summary. Restart journey clears all records.
 
+The ticket includes a fictional route, train number, departure time, boarding location, ticket gate, carriage, seat, refund terms, and rescheduling terms. Every restart selects a different sample ticket; its details remain unchanged throughout that journey. Refund and rescheduling information is illustrative, not real operator policy.
+
 ## Computational model
 
 Receiving ticket information → Traveling to the station → Security → Ticket gate → Platform → Carriage entrance → Finding the seat → Seated.

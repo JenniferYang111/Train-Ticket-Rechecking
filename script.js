@@ -14,8 +14,18 @@ let ticketVisible = true;
 let checkHistory = [];
 let finished = false;
 const element = id => document.getElementById(id);
+// Fictional examples, selected once per journey and kept stable during rechecks.
+const tickets = [
+  { route: 'River City → Lake Town', carriage: '06', seat: '12A', train: 'T102', time: '09:30', location: 'River City Central · Platform 3', gate: 'A2', refund: 'Full refund before departure.', rescheduling: 'One free change before departure.' },
+  { route: 'Hill Town → Coast City', carriage: '03', seat: '08C', train: 'T205', time: '13:45', location: 'Hill Town Station · Platform 5', gate: 'B4', refund: '80% refund before departure.', rescheduling: 'Changes before departure with a sample $5 fee.' },
+  { route: 'Forest City → Valley Town', carriage: '09', seat: '16F', train: 'T318', time: '17:20', location: 'Forest City North · Platform 2', gate: 'C1', refund: 'Non-refundable sample fare.', rescheduling: 'Two free changes before departure.' },
+  { route: 'Harbor Town → Meadow City', carriage: '02', seat: '05D', train: 'T406', time: '20:10', location: 'Harbor Town Station · Platform 7', gate: 'D3', refund: '50% refund before departure.', rescheduling: 'Changes before departure with a sample $10 fee.' }
+];
+let ticketIndex = Math.floor(Math.random() * tickets.length);
 
 function render() {
+  const ticket = tickets[ticketIndex];
+  Object.entries(ticket).forEach(([field, value]) => { element(`ticket-${field}`).textContent = value; });
   element('journey').replaceChildren(...stages.map(([name], index) => {
     const item = document.createElement('li');
     item.textContent = name;
@@ -25,7 +35,9 @@ function render() {
   }));
   element('stage-number').textContent = `STAGE ${currentStage + 1} OF ${stages.length}`;
   element('stage-title').textContent = stages[currentStage][0];
-  element('stage-description').textContent = stages[currentStage][1];
+  element('stage-description').textContent = currentStage === 3
+    ? `Find ticket gate ${ticket.gate} at the departure station. Queue and pass through the gate; check your ticket if you wish.`
+    : stages[currentStage][1];
   element('ticket').hidden = !ticketVisible;
   element('check').hidden = currentStage === 0;
   element('check').textContent = ticketVisible ? 'Close ticket' : 'Check ticket';
@@ -63,6 +75,8 @@ element('continue').addEventListener('click', () => {
   if (finished) element('summary').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 element('restart').addEventListener('click', () => {
+  // A nonzero offset guarantees a different ticket on every restart.
+  ticketIndex = (ticketIndex + 1 + Math.floor(Math.random() * (tickets.length - 1))) % tickets.length;
   currentStage = 0;
   ticketVisible = true;
   checkHistory = [];

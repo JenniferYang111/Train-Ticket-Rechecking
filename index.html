@@ -16,7 +16,17 @@
       <h2 id="stage-title"></h2><p id="stage-description"></p>
       <div id="ticket" class="ticket" hidden>
         <p class="eyebrow">YOUR TRAIN TICKET</p><h3>Seat reservation</h3>
-        <div class="ticket-details"><div>Carriage<strong>06</strong></div><div>Seat<strong>12A</strong></div></div>
+        <p id="ticket-route"></p>
+        <div class="ticket-details"><div>Carriage<strong id="ticket-carriage"></strong></div><div>Seat<strong id="ticket-seat"></strong></div></div>
+        <dl class="travel-details">
+          <dt>Train</dt><dd id="ticket-train"></dd>
+          <dt>Departure time</dt><dd id="ticket-time"></dd>
+          <dt>Boarding location</dt><dd id="ticket-location"></dd>
+          <dt>Ticket gate</dt><dd id="ticket-gate"></dd>
+          <dt>Refund</dt><dd id="ticket-refund"></dd>
+          <dt>Rescheduling</dt><dd id="ticket-rescheduling"></dd>
+        </dl>
+        <p>Sample ticket. Refund and rescheduling terms are fictional for this simulation.</p>
         <p>Match these details with the carriage and seat labels.</p>
       </div>
       <p id="status" role="status" aria-live="polite"></p>
