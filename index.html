@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Train Ticket Rechecking</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">AN EVERYDAY OBSERVATION</p><h1>One ticket. Many checks.</h1><p>Follow a passenger's journey and choose when to confirm the carriage and seat.</p></header>
+    <ol id="journey" aria-label="Journey stages"></ol>
+    <section class="panel" aria-labelledby="stage-title">
+      <p id="stage-number" class="eyebrow"></p>
+      <h2 id="stage-title"></h2><p id="stage-description"></p>
+      <div id="ticket" class="ticket" hidden>
+        <p class="eyebrow">YOUR TRAIN TICKET</p><h3>Seat reservation</h3>
+        <div class="ticket-details"><div>Carriage<strong>06</strong></div><div>Seat<strong>12A</strong></div></div>
+        <p>Match these details with the carriage and seat labels.</p>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div class="actions"><button id="check" type="button">Check ticket</button><button id="continue" type="button">Continue</button></div>
+    </section>
+    <section id="summary" class="panel" hidden aria-labelledby="summary-title"><h2 id="summary-title">Your journey summary</h2><p id="total"></p><ul id="breakdown"></ul><p>The first ticket viewing is separate from rechecks. These choices show checking behavior; they do not explain its cause.</p></section>
+    <section class="panel"><h2>Checking history</h2><p>Initial viewing: once, after receiving the ticket.</p><ol id="history"><li>No rechecks yet.</li></ol></section>
+    <button id="restart" class="secondary" type="button">Restart journey</button>
+    <footer>A simplified model of repeated ticket checking. There is no required number of checks, and stages do not simulate real elapsed time.</footer>
+  </main>
+</body>
+</html>
