@@ -1,6 +1,6 @@
 # Train Ticket Rechecking
 
-[Open the demo](https://jenniferyang111.github.io/Train-Ticket-Rechecking/?version=abstract-1)
+[Open the demo](https://jenniferyang111.github.io/Train-Ticket-Rechecking/?version=abstract-2)
 
 ## Core idea
 
@@ -10,7 +10,7 @@ This abstract model has three independent operations: view information, choose a
 
 ## Use
 
-View and hide the ticket as often as you wish. Choose a train/carriage/seat combination. Compare it with the ticket, then change your choice if needed. You can check the ticket at any point. Start again clears the selection, comparison, and view count.
+View and hide the ticket as often as you wish. Choose a train/carriage/seat combination. Compare it with the ticket, then change your choice if needed. You can check the ticket at any point. Start again changes the ticket and corresponding choices, and clears the selection, comparison, and view count. Tickets include platform information. Mismatches appear in red; matches appear in green.
 
 ## Files
 
@@ -18,6 +18,6 @@ Separate root-level files: index.html (interface), style.css (styling), script.j
 
 ## Scope and validation
 
-A fixed sample ticket and four choices keep the code simple. This version replaces the detailed ticket and restart randomization with the essential checking-and-action relationship. It does not explain psychological causes or simulate actual travel.
+Three sample tickets and five choices per ticket keep the code simple. This version focuses on the essential checking-and-action relationship. It does not explain psychological causes or simulate actual travel.
 
 Validated repeated viewing before action, action before viewing, each mismatch, a correct match, clearing stale comparisons after changing position, and resetting.

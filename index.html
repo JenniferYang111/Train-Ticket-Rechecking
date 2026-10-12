@@ -4,24 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Check, Choose, Compare</title>
-  <link rel="stylesheet" href="style.css?v=abstract-1">
-  <script src="script.js?v=abstract-1" defer></script>
+  <link rel="stylesheet" href="style.css?v=abstract-2">
+  <script src="script.js?v=abstract-2" defer></script>
 </head>
 <body>
   <main>
     <h1>Check, choose, compare.</h1>
     <p>Check your ticket whenever you wish. Choose a position, then compare it with your ticket.</p>
     <button id="check" aria-controls="ticket" aria-expanded="false">View ticket</button>
-    <p id="ticket" hidden>Train T406 · Carriage 02 · Seat 05D</p>
+    <p id="ticket" hidden></p>
     <p id="count" role="status">Ticket views: 0</p>
     <label for="position">Choose your position</label>
-    <select id="position">
-      <option value="">Select a position</option>
-      <option value="wrong-train">Train T205 · Carriage 02 · Seat 05D</option>
-      <option value="wrong-carriage">Train T406 · Carriage 03 · Seat 05D</option>
-      <option value="wrong-seat">Train T406 · Carriage 02 · Seat 08C</option>
-      <option value="correct">Train T406 · Carriage 02 · Seat 05D</option>
-    </select>
+    <select id="position"></select>
     <button id="compare">Compare with ticket</button>
     <p id="result" role="status" aria-live="polite">No position compared yet.</p>
     <button id="reset">Start again</button>

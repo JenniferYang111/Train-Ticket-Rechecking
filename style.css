@@ -9,3 +9,6 @@ select { display: block; width: 100%; margin: 8px 0 12px; background: white; col
 #ticket { padding: 16px; background: #fff7df; border: 1px dashed #bb984d; border-radius: 8px; }
 .note { font-size: 14px; color: #526e70; }
 [hidden] { display: none; }
+
+#result.incorrect { color: #b42318; }
+#result.correct { color: #18733c; }
