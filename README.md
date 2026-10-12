@@ -1,25 +1,23 @@
 # Train Ticket Rechecking
 
-A simple abstract model of passengers repeatedly checking ticket information.
+[Open the demo](https://jenniferyang111.github.io/Train-Ticket-Rechecking/?version=abstract-1)
 
-[Open the demo](https://jenniferyang111.github.io/Train-Ticket-Rechecking/)
+## Core idea
 
-## Interaction
+Passengers can repeatedly consult ticket information before or after taking an action, then compare their chosen position with the ticket and adjust if needed.
 
-Read the initially visible ticket. Select Hide ticket, then Check ticket whenever you choose. Only reopening increases the recheck counter. Restart resets the counter, shows the ticket, and selects a different fictional ticket.
+This abstract model has three independent operations: view information, choose a position, and compare. There are no journey stages or required checking order. The position choice stands for an action; changing it stands for correcting that action. The counter counts every opening of the ticket, including the first.
 
-## Abstraction
+## Use
 
-The model keeps ticket information, visible/hidden state, and a recheck count. It removes journey stages and location tracking to focus on the cycle: view → hide → check again. It represents behavior, not its psychological cause.
+View and hide the ticket as often as you wish. Choose a train/carriage/seat combination. Compare it with the ticket, then change your choice if needed. You can check the ticket at any point. Start again clears the selection, comparison, and view count.
 
 ## Files
 
-- index.html: ticket, button, counter, and restart.
-- style.css: compact horizontal ticket layout and page styling.
-- script.js: visibility toggle, counter, and new tickets on restart.
+Separate root-level files: index.html (interface), style.css (styling), script.js (viewing and comparison). Download them together and open index.html in a browser. No dependencies or installation.
 
-All three files are separate at the repository root. Download them together and open index.html locally; no installation is needed. Refund and rescheduling terms are fictional.
+## Scope and validation
 
-## Validation
+A fixed sample ticket and four choices keep the code simple. This version replaces the detailed ticket and restart randomization with the essential checking-and-action relationship. It does not explain psychological causes or simulate actual travel.
 
-Checked initial viewing, hiding without increasing the count, repeated reopening, stable ticket details during a session, and reset with a different ticket.
+Validated repeated viewing before action, action before viewing, each mismatch, a correct match, clearing stale comparisons after changing position, and resetting.

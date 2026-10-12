@@ -3,34 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Train Ticket Rechecking</title>
-  <link rel="stylesheet" href="style.css?v=simple-1">
-  <script src="script.js?v=simple-1" defer></script>
+  <title>Check, Choose, Compare</title>
+  <link rel="stylesheet" href="style.css?v=abstract-1">
+  <script src="script.js?v=abstract-1" defer></script>
 </head>
 <body>
   <main>
-    <header><p class="eyebrow">AN EVERYDAY OBSERVATION</p><h1>One ticket. Many checks.</h1><p>Read the ticket, hide it, and choose whether to check it again.</p></header>
-    <section class="panel" aria-label="Ticket checking simulation">
-      <div id="ticket" class="ticket" hidden>
-        <div class="ticket-heading"><span>TRAIN TICKET</span><span id="ticket-train"></span></div>
-        <div class="ticket-main">
-          <div class="ticket-place"><span class="ticket-label">Route</span><p id="ticket-route"></p><span class="ticket-label">Boarding station</span><p id="ticket-location"></p></div>
-          <div class="ticket-departure"><span class="ticket-label">Departure</span><p id="ticket-time"></p></div>
-        </div>
-        <div class="ticket-details">
-          <span>Carriage <span id="ticket-carriage"></span></span>
-          <span>Seat <span id="ticket-seat"></span></span>
-          <span>Gate <span id="ticket-gate"></span></span>
-          <span>Platform <span id="ticket-platform"></span></span>
-        </div>
-        <div class="ticket-policies"><p>Refund: <span id="ticket-refund"></span></p><p>Rescheduling: <span id="ticket-rescheduling"></span></p></div>
-        <p class="ticket-note">Sample ticket · Fictional refund and rescheduling terms.</p>
-      </div>
-      <p id="status" role="status" aria-live="polite"></p>
-      <div class="actions"><button id="check" type="button" aria-controls="ticket">Hide ticket</button></div>
-    </section>
-    <button id="restart" class="secondary" type="button">Restart</button>
-    <footer>The first viewing is not counted. Each reopening adds one recheck. This model shows repetition without assuming why people check.</footer>
+    <h1>Check, choose, compare.</h1>
+    <p>Check your ticket whenever you wish. Choose a position, then compare it with your ticket.</p>
+    <button id="check" aria-controls="ticket" aria-expanded="false">View ticket</button>
+    <p id="ticket" hidden>Train T406 · Carriage 02 · Seat 05D</p>
+    <p id="count" role="status">Ticket views: 0</p>
+    <label for="position">Choose your position</label>
+    <select id="position">
+      <option value="">Select a position</option>
+      <option value="wrong-train">Train T205 · Carriage 02 · Seat 05D</option>
+      <option value="wrong-carriage">Train T406 · Carriage 03 · Seat 05D</option>
+      <option value="wrong-seat">Train T406 · Carriage 02 · Seat 08C</option>
+      <option value="correct">Train T406 · Carriage 02 · Seat 05D</option>
+    </select>
+    <button id="compare">Compare with ticket</button>
+    <p id="result" role="status" aria-live="polite">No position compared yet.</p>
+    <button id="reset">Start again</button>
+    <p class="note">You can view the ticket repeatedly before or after choosing a position. This is a simplified model of checking information against an action.</p>
   </main>
 </body>
 </html>
